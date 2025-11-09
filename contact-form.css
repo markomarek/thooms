@@ -1,0 +1,6 @@
+/* contact form status + honeypot */
+.hp-field { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+.form-row { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.form-status { font-size: 14px; }
+.form-status.ok { color: #2e7d32; }
+.form-status.err { color: #c62828; }

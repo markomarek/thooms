@@ -1,0 +1,62 @@
+/* Kontakt – drobné úpravy */
+.sixth-page {
+  font-family: Roboto;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 60px 10%; gap: 50px;
+}
+.sixth-page-left { flex: 1; }
+.sixth-page-left-title { font-size: 32px; padding-bottom: 40px; }
+
+.sixth-page-right { flex: 1; display: flex; justify-content: center; align-items: center; }
+
+/* čierny panel */
+.sixth-page-right-label {
+  background-color: #000; color: white;
+  padding: 40px 40px 200px; border-radius: 12px;
+  width: 80%; max-width: 400px; display: flex; flex-direction: column; gap: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,.3);
+}
+.sixth-page-right-telephone, .sixth-page-right-mail, .sixth-page-right-location {
+  display: flex; align-items: center; gap: 15px;
+}
+.sixth-page-right-telephone img, .sixth-page-right-mail img, .sixth-page-right-location img { width: 24px; height: 24px; }
+
+.sixth-page-right-title p {
+  font-size: 22px; font-weight: 600; margin-bottom: 10px; text-align: center; border-bottom: 1px solid white; padding-bottom: 10px;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 400px; }
+.contact-form label { font-weight: 500; margin-bottom: 5px; }
+.contact-form input, .contact-form textarea {
+  width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; font-family: inherit; outline: none;
+  transition: border-color .3s;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: #e53935; }
+
+.send-button {
+  background-color: #e53935; color: white; border: none; border-radius: 8px; padding: 16px 24px; font-size: 16px; cursor: pointer;
+  transition: background-color .3s;
+}
+.send-button:hover, .send-button:focus-visible { background-color: #c62828; }
+
+.sixth-page-right img { width: 24px; height: 24px; margin-right: 10px; display: inline-block; }
+
+@media (max-width: 900px) {
+  .sixth-page { flex-direction: column; padding: 40px 20px; }
+  .sixth-page-right-label { width: 100%; max-width: none; }
+}
+
+
+/* 🔴 Zmena farby telefónu a e-mailu na červenú */
+.sixth-page-right-telephone a,
+.sixth-page-right-mail a {
+  color: #e53935; /* rovnaký červený odtieň ako na stránke */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sixth-page-right-telephone a:hover,
+.sixth-page-right-mail a:hover {
+  color: #c62828; /* tmavšia červená pri prechode myšou */
+  text-decoration: underline;
+}

@@ -1,0 +1,168 @@
+/* Header & global nav */
+.header {
+  font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+  font-size: 15px;
+  background-color: #fff;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.left-section { display: flex; align-items: center; margin-right: 150px; }
+.logo { height: 90px; width: 100px; margin-left: 10px; }
+
+.right-section { display: flex; flex-direction: row; align-items: center; gap: 8px; }
+
+/* nav links (namiesto div "buttonov") */
+.nav-link {
+  display: inline-block;
+  background: transparent;
+  color: #111;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 12px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: border-color .2s ease, color .2s ease;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  border-bottom-color: #e53935;
+  outline: none;
+}
+
+.nav-link.cta {
+  margin: 0 40px;
+  font-weight: 700;
+  border: 1px solid #e53935;
+  border-radius: 8px;
+  padding: 8px 14px;
+}
+.nav-link.cta:hover,
+.nav-link.cta:focus-visible {
+  background: #e53935;
+  color: #fff;
+  border-bottom-color: transparent;
+}
+
+/* generické tlačidlá naprieč webom */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  line-height: 1;
+  border: 1px solid #e53935;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn.primary { background: #e53935; color: #fff; border-color: #e53935; }
+.btn.primary:hover,
+.btn.primary:focus-visible { background: #c62828; color: #fff; }
+.btn.outline { background: transparent; color: #e53935; }
+.btn.outline:hover,
+.btn.outline:focus-visible { background: #ffe5e4; }
+
+/* aby sticky header neprekryl kotvy sekcií */
+.main-page { scroll-margin-top: 90px; }
+section[id] { scroll-margin-top: 90px; }
+
+@media (max-width: 900px) {
+  .right-section { gap: 0; }
+  .nav-link { padding: 8px 10px; }
+  .nav-link.cta { margin: 0 12px 0 8px; }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+a.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+a.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background: #111;
+  color: #fff;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* plynulé scrollovanie + rezerva pre fixný header pri anchor skokoch */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* ~výška headera, uprav podľa potreby (70–90px) */
+}
+
+/* nech hero vyplní celú obrazovku, aby nepresvitalo nič pod ním */
+.main-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+/* nech sekcia Výhody tiež zaplní obrazovku a nezačína nalepená */
+.second-page {
+  min-height: 100vh;       /* aby si nevidel „Kto som…“ pod ňou */
+  padding-top: 40px;       /* vzduch nad nadpisom */
+  box-sizing: border-box;  /* aby padding nerobil šarapatu s výškou */
+  scroll-margin-top: 80px; /* extra istota proti prekrytiu headerom */
+}
+
+/* pre istotu – nech „Kto som…“ neskočí nahor medzerou */
+.third-page-1 {
+  margin-top: 0;
+}
+
+
+
+/* ===== Scroll snapping len pre #about a #training ===== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity; /* jemné "zacvaknutie" pri scrollovaní */
+}
+
+/* Aktivujeme snapping pre vybrané sekcie */
+#about,
+#training {
+  scroll-snap-align: center;  /* zarovná stred sekcie do stredu obrazovky */
+  scroll-snap-stop: normal;   /* nech je plynulé, nie tvrdé */
+  min-height: 100vh;          /* aby sekcia pokryla celé okno */
+  box-sizing: border-box;
+}
+
+/* Ak máš fixný header, môžeme vypnúť jeho offset pre center */
+html {
+  scroll-padding-top: 0;
+}
+
+/* Vypnutie scroll-snap na mobiloch (menšie obrazovky) */
+@media (max-width: 768px) {
+  html {
+    scroll-snap-type: none;
+  }
+}
+
+/* Rezerva pre fixný header pri skokoch na kotvy (anchor) */
+#osobny-trening,
+#online-koucing,
+#contact {
+  scroll-margin-top: 70px; /* dolaď podľa reálnej výšky headera (napr. 70–100) */
+}

@@ -1,0 +1,83 @@
+.second-page {
+  margin-top: 0;
+}
+.second-page-title-container {
+    font-family: Roboto;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    margin-top: -50px;
+    margin-bottom: 0px;
+}
+.benefits-containers {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 20px;
+    margin-left:80px;
+    margin-right: 80px;
+}
+.benefits-containers img {
+    height: 60px;
+    object-fit: contain;
+}
+.first-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 40px;
+}
+.second-container {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 40px;
+}
+.third-container {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 40px;
+}
+.fourth-container {
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    margin: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 10px;
+    padding: 40px;
+}
+.first-container,.second-container,.third-container,.fourth-container{
+  box-shadow:0 8px 24px rgba(0,0,0,.1);
+}
