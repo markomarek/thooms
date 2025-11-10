@@ -1,0 +1,36 @@
+.third-page {
+    font-family: Roboto;
+    display: flex;
+    flex-direction: column;
+}
+.third-page-title {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+    margin-bottom: -40px;
+    font-size: 32px;
+}
+.third-page-flex {
+    display: flex;
+    flex-direction: row;
+}
+.third-page-left {
+    padding: 50px;
+}
+.third-page-picture {
+    height: 400px;
+}
+.third-picture {
+    height: 400px;
+    border-radius: 8px;
+}
+.third-page-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+.p3 {
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}

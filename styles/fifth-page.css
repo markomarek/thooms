@@ -1,0 +1,91 @@
+.fifth-page-containers {
+  display: flex;
+  justify-content: center; /* zarovná ich do stredu */
+  align-items: stretch; /* všetky rovnako vysoké */
+  gap: 40px; /* medzera medzi boxami */
+  flex-wrap: nowrap; /* zabrání, aby sa lámali na nový riadok */
+  margin: 80px auto;
+  max-width: 1200px;
+}
+
+.fifth-page-first-container,
+.fifth-page-second-container,
+.fifth-page-third-container {
+  width: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.fifth-page-second-container {
+  border-color: red; /* stredný kontajner červený border */
+}
+
+.fifth-page-first-container:hover,
+.fifth-page-second-container:hover,
+.fifth-page-third-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Nadpis */
+.first-container-title p,
+.second-container-title p,
+.third-container-title p {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Tenká čiara */
+.first-container-title::after,
+.second-container-title::after,
+.third-container-title::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 10px auto 20px auto;
+}
+
+/* Cena a text vedľa */
+.first-container-price,
+.second-container-price,
+.third-container-price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.first-container-price p:first-child,
+.second-container-price p:first-child,
+.third-container-price p:first-child {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.first-container-price p:last-child,
+.second-container-price p:last-child,
+.third-container-price p:last-child {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Popis */
+.first-container-paragraph p,
+.second-container-paragraph p,
+.third-container-paragraph p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+
+

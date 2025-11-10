@@ -1,0 +1,192 @@
+/* Služby – ponechaný vizuál, čitateľnejšie a s media queries */
+.fourth-page {
+  font-family: Roboto;
+  position: relative; width: 100%; height: 100vh; overflow: hidden;
+}
+.fourth-page-backgrounds { display: flex; width: 100%; height: 100%; }
+.fourth-page-left-section, .fourth-page-right-section { flex: 1; height: 100%; position: relative; }
+
+.left-background img, .right-background img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+/* Overlays */
+.grey-rectangle-left, .grey-rectangle-right {
+  position: absolute; top: 50%; left: 50%;
+  width: 50%; height: 70%; transform: translate(-50%, -50%);
+  background-color: rgba(0,0,0,.6); border-radius: 10px; z-index: 2;
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
+}
+.left-background, .right-background { position: relative; height: 100%; }
+.left-background img, .right-background img { z-index: 1; }
+.grey-rectangle-left, .grey-rectangle-right { z-index: 2; }
+
+.fourth-page-left-title p, .fourth-page-right-title p {
+  font-size: 24px; font-weight: 700; margin: 0 0 40px 0; color: white;
+}
+.fourth-page-left-paragraph p, .fourth-page-right-paragraph p {
+  font-size: 16px; line-height: 1.6; color: white; margin: 0;
+}
+.fourth-page-left-button, .fourth-page-right-button { display: inline-block; margin-top: 40px; }
+
+@media (max-width: 900px) {
+  .fourth-page { height: auto; }
+  .fourth-page-backgrounds { flex-direction: column; }
+  .grey-rectangle-left, .grey-rectangle-right { width: 80%; height: auto; padding: 30px 20px; }
+}
+
+/* zvýraznenie výberu podľa hash (#online alebo #gym) */
+.fourth-page .is-active {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.2);
+}
+
+.fourth-page .is-inactive {
+  filter: grayscale(25%) brightness(.9);
+  opacity: .6;
+}
+
+/* pekný prechod, ale rešpektuj reduced motion */
+@media (prefers-reduced-motion: no-preference) {
+  .fourth-page-left-section,
+  .fourth-page-right-section {
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease, opacity .25s ease;
+  }
+}
+
+
+
+
+/* Plynulé skrolovanie po kliknutí na "Viac info" */
+html { scroll-behavior: smooth; }
+
+/* Sekcie so službami pod fourth-page */
+.service-section {
+  font-family: Roboto;
+  padding: 80px 10%;
+  background: #f8f8f8;
+}
+.service-section.alt { background:#ffffff; }
+
+.service-section h2 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+}
+.service-section .lead {
+  font-size: 18px;
+  color: #444;
+  max-width: 900px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.service-section .sub {
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+
+/* Tri stĺpce – vlastnosti */
+.columns {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.card {
+  flex: 1 1 260px;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  background: #fff;
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+/* Cenník */
+.pricing {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.price {
+  flex: 1 1 260px;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+.price h4 { margin: 0 0 10px 0; }
+.price .num {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.price ul {
+  margin: 0 0 15px 16px;
+  padding: 0;
+}
+.price a.btn { display: inline-block; }
+
+/* Tlačidlá */
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #e53935;
+}
+.btn.primary {
+  background: #e53935;
+  color: #fff;
+}
+.btn.outline {
+  background: transparent;
+  color: #e53935;
+}
+
+/* FAQ */
+.faq details {
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background:#fff;
+  padding: 12px 16px;
+  margin: 10px 0;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.faq p { margin: 8px 0 0 0; }
+
+#osobny-trening {
+  text-align: center;
+}
+
+#online-koucing {
+  text-align: center;
+}
+
+/* 🔴 Uprava farby tlačidiel Viac info v sekcii s backgroundmi */
+.fourth-page-left-button,
+.fourth-page-right-button {
+  color: white; /* alebo #e53935 ak chceš červený text */
+  background-color: #e53935; /* červená farba používaná na stránke */
+  text-decoration: none;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* efekt pri prechode myšou */
+.fourth-page-left-button:hover,
+.fourth-page-right-button:hover {
+  background-color: #c62828; /* tmavšia červená */
+  color: #fff;
+}

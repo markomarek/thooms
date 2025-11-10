@@ -1,0 +1,82 @@
+.main-page {
+    font-family: Roboto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin-top: -100px;
+}
+.left-section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.p1 {
+    font-size: 42px;
+    margin-left: 50px;
+}
+
+.main-page-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+/*.main-page-button {
+    background-color: white;
+    font-size: 16px;
+    padding: 10px;
+    margin: 35px;
+    cursor: pointer;
+    border: none;
+    border-bottom-width: 2px;
+    border-bottom-color:transparent;
+    border-bottom-style: solid;
+    text-decoration: none;    zruší modré podčiarknutie 
+    display: inline-block;    nech sa správa ako tlačidlo 
+}
+
+  
+.main-page-button:hover {
+    border-bottom-width: 2px;
+    border-bottom-color:red;
+    border-bottom-style: solid;
+}
+    */
+
+.main-page-button {
+  background-color: #e53935;        /* červená z webu */
+  color: white;                     /* biely text */
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 25px;
+  margin: 35px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;               /* zaoblené rohy ako v fourth-page */
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover efekt – rovnaký ako v časti s backgroundmi */
+.main-page-button:hover {
+  background-color: #c62828;        /* tmavšia červená pri prechode */
+  transform: translateY(-2px);      /* jemné nadvihnutie */
+}
+
+.right-section-1 {
+    display: flex;
+    justify-content: end;
+    flex: 1;
+    margin-right: 50px;
+}
+
+.main-page-picture {
+    height: 350px;
+    border-radius: 8px;
+    
+}
+html { scroll-behavior: smooth; }
+
+
